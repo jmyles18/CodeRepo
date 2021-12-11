@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+
+
+<script src="https://otcc-demo.otprivacy.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="df078357-50df-4ecc-9cd6-9885fabe76ab-test"></script>
+<script type="text/javascript">
+function OptanonWrapper() {
+    console.log("OptanonWrapper called");
+    
+    var bannerAcceptButton = document.getElementById("onetrust-accept-btn-handler");
+    var pcAllowAllButton = document.getElementById("accept-recommended-btn-handler");
+    var pcSaveButton = document.getElementsByClassName("save-preference-btn-handler onetrust-close-btn-handler button-theme")[0];
+    var OABCcookie = getCookie(OABCcookieName);
+
+    // IF logic needed here because ot-banner-sdk DIV is not injected on page loads if banner is not exposed
+    if (!OABCcookie) {
+        bannerAcceptButton.addEventListener('click', function(){
+	        console.log("Allowed all via Banner");
+	        // Function to set cookieValue
+	        setTimeout(updateOTExpiration, 1000); 
+        });
+    }
+
+    pcAllowAllButton.addEventListener('click', function(){
+	    console.log("Allowed all via Preference Center");
+	    // Function to set cookieValue
+	    setTimeout(updateOTExpiration, 1000); 
+    });
+
+    pcSaveButton.addEventListener('click', function(){
+	    console.log("Set custom settings via Preference Center");
+	    // Function to set cookieValue
+	    setTimeout(updateOTExpiration, 1000); 
+    });
+}
+</script>
+
+<script>
+// function to pull cookie value
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2)
+    return parts.pop().split(";").shift();
+}
+
+//var domain = ".onetoso.com"
+var date = new Date();
+// date calculation - days * hours * minutes * seconds * converting seconds to milliseconds
+// change this whatever time frame you need to update expiration date to (ex. change 365 to 180 to update from 12 to 6 months)
+date.setTime(date.getTime()+(365*24*60*60*1000));
+var expires = "; expires="+date.toGMTString();
+console.log("expires: " + expires);
+//var cookieName = "OptanonConsent";
+var OABCcookieName = "OptanonAlertBoxClosed";
+//var extraCookie = "OT Cookie";
+
+// function to update cookie expiration
+function updateOTExpiration() {
+    //var cookieCheck = getCookie(extraCookie);
+    //if (!cookieCheck) {
+        //var cookie = getCookie(cookieName);
+        
+        //*** THIS IS NOT NEEDED SINCE ONLY OptanonAlertBoxClosed cookie needs to be updated ***
+        //document.cookie = cookieName + "=" + cookie + expires + ";path=/; Samesite=Lax;" //domain=" + domain + ";";
+        //console.log("OptanonConsent cookie overwritten");
+
+        //updating the OptanonAlertBoxClosed cookie expiration date
+        // uncomment the domain portion of this for Production CDN scripts
+        var OABCcookie = getCookie(OABCcookieName);
+        document.cookie = OABCcookieName + "=" + OABCcookie + expires + ";path=/; Samesite=Lax;" //domain=" + domain + ";";
+        console.log("OptanonAlertBoxClosed cookie overwritten");
+
+        //document.cookie = extraCookie + "=" + "true" + expires + ";path=/; Samesite=Lax;";
+    //} else {
+    //    console.log("cookies already updated");
+    //}
+}
+</script>
+
+        <title>OneTrust Testing - Home</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a>
+        </div>
+        
+        <h1>OneTrust Testing</h1>
+
+
+<!-- OneTrust Cookies Settings button start -->
+<button class="ot-sdk-show-settings">Cookie Settings</button>
+<!-- OneTrust Cookies Settings button end -->
+
+
+    </body>
+</html>

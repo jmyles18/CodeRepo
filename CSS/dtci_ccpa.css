@@ -1,0 +1,50 @@
+/* *************************************************** */
+/* Cookie Policy */
+/* *************************************************** */
+
+/* *************************************************** */
+/* Preference Center */
+/* *************************************************** */
+
+/* DO NOT CHANGE */
+body #onetrust-pc-sdk div.category-item[data-optanongroupid='C0001'],
+body #onetrust-pc-sdk div.category-item[data-optanongroupid='C0002'],
+body #onetrust-pc-sdk div.category-item[data-optanongroupid='C0003'],
+body #onetrust-pc-sdk div.category-item[data-optanongroupid='C0005']{
+    display: none !important;
+}
+
+body #onetrust-pc-sdk.otPcCenter {
+    border-radius: 10px !important;
+    max-height: calc(100vh - 100px);
+    max-width: 550px;
+    top: 12px;
+    transform: translate3d(0,0,0) !important;
+}
+
+body #onetrust-pc-sdk .pc-logo-container {
+    display: none;
+}
+
+#onetrust-consent-sdk #onetrust-pc-sdk button.save-preference-btn-handler{
+    align-items: center;
+    border-radius: 50px;
+    border: 0;
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    height: 32px;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 1;
+    padding: 0 20px;
+    white-space: nowrap;
+}
+
+body #onetrust-pc-sdk .save-preference-btn-container {
+    margin-top: 0;
+}
+
+body #onetrust-pc-sdk .button-theme {
+    margin-top: 12px;
+}

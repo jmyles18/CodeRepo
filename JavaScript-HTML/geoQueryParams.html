@@ -1,0 +1,41 @@
+<script>
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    
+    // query string: ?state=CA&country=IE
+    var state = getParameterByName('state'); // "CA"
+    console.log("QUERY PARAM state = " + state);
+    var country = getParameterByName('country'); // "IE"
+    console.log("QUERY PARAM country = " + country);
+</script>
+
+<script type="text/javascript">
+    // uncomment for customGeolocation        
+    if (state) {
+        var OneTrust = {
+            geolocationResponse: {
+                stateCode: state
+            }        
+        }
+    }
+    else if (country) {
+        var OneTrust = {
+            geolocationResponse: {
+                countryCode: country
+            }
+        }
+    }    
+</script>
+
+<!-- <script charset="UTF-8" data-domain-script="75ebc322-027b-4590-b3ad-9393be9b46ff" data-language="en" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript"></script> -->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-language="en" type="text/javascript" charset="UTF-8" data-domain-script="75ebc322-027b-4590-b3ad-9393be9b46ff-test"></script>
+<script ccpa-opt-out-geo="all" ccpa-opt-out-ids="C0004" ccpa-opt-out-lspa="false" charset="utf-8" src="https://cdn.cookielaw.org/opt-out/otCCPAiab.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function OptanonWrapper() {}
+</script>

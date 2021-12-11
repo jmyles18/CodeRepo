@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    // Create a global variable and set the string ‘LDU’. This means the default is to have the FB pixel initiated with the limited data processing on, knowing this will only affect Californians
+    var pixelLDU = 'LDU';
+    function OptanonWrapper() {
+        // Updates the global variable based on whether or not the cookie category Id active // Note: replace ',C0004,' with whichever category you wish to match to enabling/disabling FB LDU mode
+        if (OptanonActiveGroups.indexOf(',C0004,') == -1) {
+            console.log('Limited Data Processing');
+        } else {
+            console.log('No Limits');
+            pixelLDU = '';
+        } 
+    } 
+</script> <!-- OneTrust Cookies Consent Notice end -->
+
+<!-- Facebook Pixel Code -->
+<script>
+// Initiates the FB pixel to do the geolocation lookup itself and only enable LDU if the consumer has opted out of the sale of personal data
+fbq('dataProcessingOptions', [pixelLDU], 0, 0);
+fbq('init', {pixel_Id});
+fbq('track', 'PageView'); 
+</script> …
+<!-- End Facebook Pixel Code -->

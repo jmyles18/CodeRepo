@@ -1,0 +1,20 @@
+/** Label for toggle unchecked **/
+body #onetrust-pc-sdk [type="checkbox"]:not(:checked) + label::before {
+    content: "OFF";
+    position: absolute;
+    width: max-content;
+    left: -40px;
+    top: 2px;
+    color: #696969;
+}
+
+/** Label for toggle checked **/
+body #onetrust-pc-sdk [type="checkbox"]:checked + label::before {
+    content: "ACTIVE";
+    color: #696969;
+    position: absolute;
+    width: max-content;
+    left: -70px;
+    top: 2px;
+}
+/** Pref Center CSS END **/

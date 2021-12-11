@@ -1,0 +1,26 @@
+.ot-floating-button__open {
+    background-color: green;
+    background-image: url(https://image.flaticon.com/icons/svg/614/614180.svg);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.ot-floating-button__open svg {
+    display: none;
+}
+ 
+#ot-sdk-btn-floating .ot-floating-button__front {
+    background: transparent !important;
+    box-shadow: none!important;
+}
+ 
+ 
+#ot-sdk-btn-floating .ot-floating-button__back {
+    background-color: transparent;
+    box-shadow: none;
+}
+ 
+#ot-sdk-btn-floating.ot-floating-button.ot-pc-open .ot-floating-button__back {
+    background-color: transparent;
+    box-shadow:none;
+}

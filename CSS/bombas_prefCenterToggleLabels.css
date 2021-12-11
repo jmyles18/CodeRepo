@@ -1,0 +1,39 @@
+/** Banner CSS START **/
+button#onetrust-reject-all-handler {
+    float: right !important;
+}
+/** Banner CSS END **/
+
+
+/** Pref Center CSS START **/
+body #onetrust-pc-sdk div.ot-cat-item[data-optanongroupid="C0001"],
+body #onetrust-pc-sdk div.ot-cat-item[data-optanongroupid="C0002"],
+body #onetrust-pc-sdk div.ot-cat-item[data-optanongroupid="C0003"],
+body #onetrust-pc-sdk div.ot-cat-item[data-optanongroupid="C0004"] {
+    display: none;
+}
+
+body #onetrust-pc-sdk .ot-always-active-subgroup .ot-always-active {
+    display: none;
+}
+
+/** Label for toggle unchecked **/
+body #onetrust-pc-sdk [type="checkbox"]:not(:checked) + label::before {
+    content: "OFF";
+    position: absolute;
+    width: max-content;
+    left: -40px;
+    top: 2px;
+    color: #696969;
+}
+
+/** Label for toggle checked **/
+body #onetrust-pc-sdk [type="checkbox"]:checked + label::before {
+    content: "ACTIVE";
+    color: #696969;
+    position: absolute;
+    width: max-content;
+    left: -65px;
+    top: 2px;
+}
+/** Pref Center CSS END **/

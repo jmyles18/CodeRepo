@@ -1,0 +1,231 @@
+/* Cookie Banner */
+#onetrust-consent-sdk {
+	font-family: Avenir !important;
+}
+
+#onetrust-banner-sdk #onetrust-policy-title {
+    font-weight: normal !important;
+}
+
+#onetrust-banner-sdk div, #onetrust-banner-sdk a {
+    font-size: 11pt !important;
+}
+
+#onetrust-banner-sdk #onetrust-accept-btn-handler {
+    margin-right: 20px !important;
+}
+
+#onetrust-consent-sdk .ot-sdk-show-settings {
+	cursor: pointer !important;
+}
+
+#onetrust-consent-sdk #onetrust-accept-btn-handler {
+	float: left !important;
+}
+
+span.optanon-toggle-display {
+    text-decoration: underline !important;
+    color: #0072d2 !important;
+}
+
+#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler {
+    background-color: #0072D2 !important;
+    border-color: #0072D2 !important;
+    color: #F9F9F9 !important;
+    background: #1A1D29 !important; /* transparent !important; */
+    border: 2px solid white !important;
+    border-radius: 4px !important;
+    font-size: 12pt !important;
+}
+
+@media only screen and (min-width: 1024px) {
+	#onetrust-banner-sdk #onetrust-button-group-parent {
+		width: 36% !important;
+	}
+}
+
+a.banner-policy-link,
+span.ot-sdk-show-settings {
+	color: #0072D2 !important;
+	text-decoration: underline !important;
+}
+
+@media only screen and (min-width: 1024px) {
+	#onetrust-banner-sdk #onetrust-group-container {
+		width: 51% !important;
+	}
+
+	#onetrust-banner-sdk.vertical-align-content #onetrust-button-group-parent {
+		position: absolute !important;
+		top: 50% !important;
+		right: 30px !important;
+		left: auto !important;
+		width: auto !important;
+		transform: translateY(-50%) !important;
+	}
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 897px) {
+	#onetrust-banner-sdk #onetrust-button-group {
+		margin-right: auto !important;
+		margin-top: 5px !important;
+    }
+}
+
+@media only screen and (max-width: 752px) {
+	#onetrust-button-group-parent {
+		position: relative !important;
+	}
+}
+
+@media only screen and (max-width: 896px) and (min-width: 550px) {
+	#onetrust-banner-sdk #onetrust-group-container {
+        width: 95% !important;
+        margin-left: 3% !important;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	#onetrust-banner-sdk #onetrust-button-group {
+		margin-right: 0% !important;
+	}
+}
+
+@media only screen and (max-width: 549px) {
+	#onetrust-banner-sdk #onetrust-button-group {
+        display: flex !important;
+        flex-direction: row-reverse !important;
+    }
+    
+    #onetrust-consent-sdk #onetrust-accept-btn-handler {
+        float: left !important;
+    }
+}
+
+/* ADDED 11.7.19 */
+@media only screen and (min-width: 1024px) {
+    #onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler {
+        width: 215px !important;
+        height: 48px !important;
+    }
+
+    #onetrust-banner-sdk #onetrust-button-group-parent {
+        margin-top: 0px !important;
+        width: 466px !important;
+    }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 897px) {
+	#onetrust-banner-sdk #onetrust-group-container {
+        width: 100% !important;
+        margin-left: -40px !important;
+    }
+
+    #onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler {
+        width: 215px !important;
+        height: 48px !important;
+    }
+    
+    #onetrust-banner-sdk #onetrust-button-group-parent {
+        margin-top: 0px !important;
+        width: 466px !important;
+    }
+}
+
+@media only screen and (max-width: 896px) and (min-width: 550px) {
+	#onetrust-banner-sdk #onetrust-button-group-parent {
+        margin-left: 5% !important;
+    }
+
+    #onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler {
+        width: 215px !important;
+        height: 48px !important;
+    }
+    
+    #onetrust-banner-sdk #onetrust-button-group-parent {
+        margin-top: 0px !important;
+        width: 466px !important;
+    }
+}
+
+@media only screen and (max-width: 549px) and (min-width: 426px) {
+    #onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler {
+        width: 215px !important;
+        height: 48px !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #onetrust-banner-sdk #onetrust-policy-text {
+        text-align: center !important;
+    }
+}
+
+
+/* Preference Center */
+
+#onetrust-consent-sdk #onetrust-pc-sdk h3 {
+	font-weight: normal !important;
+}
+
+#onetrust-pc-sdk {
+	border: none !important;
+}
+
+#onetrust-pc-sdk .group {
+	background-color: #1A1D29 !important;
+	border: none !important;
+}
+
+#onetrust-consent-sdk #onetrust-pc-sdk .active-group {
+	background-color: #353744 !important;
+	border-left: none !important;
+}
+
+#onetrust-pc-sdk .pc-logo {
+	background-position: left !important;
+	margin-top: 5% !important;
+	width: 120px !important;
+}
+
+#onetrust-pc-sdk #pc-title {
+	color: #F9F9F9 !important;
+	font-size: 16px !important;
+	margin-top: 5% !important;
+}
+
+#onetrust-pc-sdk button {
+	border-radius: 5px !important;
+}
+
+#onetrust-pc-sdk .pc-header {
+	border-bottom: 1px solid #222 !important;
+}
+
+#onetrust-pc-sdk .cookie-subgroups-container ul.cookie-subgroups .first-party-cookie-container {
+	background-color: #1A1D29 !important;
+}
+
+/*
+#onetrust-pc-sdk .toggle .checkbox label:after {
+    background: #d13d3d !important;
+}
+
+#onetrust-pc-sdk .checkbox label {
+    background: #c98f8f !important;
+}
+
+#onetrust-pc-sdk .toggle .checkbox input:checked+label:after {
+    background: #50cc75 !important;
+}
+
+#onetrust-pc-sdk .toggle .checkbox input:checked+label {
+    background: #99cfa9 !important;
+}
+*/
+
+/* NEW AS OF 10/11 */
+
+.footer-logo {
+	display: none !important;
+}

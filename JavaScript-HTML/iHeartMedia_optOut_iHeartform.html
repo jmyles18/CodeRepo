@@ -1,0 +1,47 @@
+<!--
+    The below script will execute and opt out of any specified cookie categories upon a user submitting form on
+    https://privacy.iheart.com/iheartradio/ca/form (authenticated user; iHeartMedia form) and only if "Opt-out of sale of personal information" radio
+    button is selected.
+
+    Can add another condition later if "State of residence" drop-down selection also needs to be checked.
+-->
+<script>
+    function getOptanonConsent() {
+        var v = document.cookie.match('(^|;) ?OptanonConsent=([^;]*)(;|$)');
+        return v ? v[2] : null;
+    }
+
+    function setOptanonConsent(value) {
+        var cookieDomain = "; domain=.iheart.com;";
+        var d = new Date;
+        d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * 180);
+        document.cookie = "OptanonConsent=" + value + ";path=/; Samesite=Lax; expires=" + d.toGMTString() + cookieDomain;
+    }
+
+    var submitBtn = document.querySelectorAll("button.button.ng-star-inserted span")[0];
+    /* variable will only be defined if "Opt-out of sale of personal information" radio button is selected */
+    var optOutSelection = document.querySelectorAll("mat-radio-button#mat-radio-6.mat-radio-checked")[0]
+
+    submitBtn.addEventListener('click', function(){
+        function updateCookieGroups() {
+            /* Enter appropriate cookie category IDs here */
+            var OPTOUT_GROUP = ['C0002', 'C0004', 'SPD_BG'];
+            var cookie = getOptanonConsent()
+            for (var i = 0; i < OPTOUT_GROUP.length; i++) {
+                cookie = cookie
+                    .replace("%2C" + OPTOUT_GROUP[i] + "%3A0", "%2C" + OPTOUT_GROUP[i] + "%3A0")
+                    .replace("%2C" + OPTOUT_GROUP[i] + "%3A1", "%2C" + OPTOUT_GROUP[i] + "%3A0");
+                OptanonActiveGroups = OptanonActiveGroups.replace(OPTOUT_GROUP[i] + ',', '');
+                OnetrustActiveGroups = OnetrustActiveGroups.replace(OPTOUT_GROUP[i] + ',', '');
+            }
+            setOptanonConsent(cookie);
+        }
+
+        if (optOutSelection) {
+            updateCookieGroups();
+            window.dispatchEvent(new CustomEvent("consent.onetrust"));
+        } else {
+            return;
+        }
+    });
+</script>

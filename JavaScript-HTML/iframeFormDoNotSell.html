@@ -1,0 +1,52 @@
+<!-- OneTrust Cookies Consent Notice start -->
+<script charset="utf-8" type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-domain-script="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"></script>
+<script type="text/javascript">
+    function OptanonWrapper() {};
+</script>
+<script>
+    //defines function that will grab the cookie value
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2)
+        return parts.pop().split(";").shift();
+    }
+    
+    var groupID = [4]; //e.g. [3,4] group ID to toggle off
+    //var domain = ".onetoso.com"
+    var date = new Date();
+	date.setTime(date.getTime()+(365*24*60*60*1000));
+	var expires = "; expires="+date.toGMTString();
+	console.log("expires: " + expires);
+    formSubmit = false;
+    
+    function updateTargeting(ID) {
+        var cookie = getCookie("OptanonConsent");
+        for (var i = 0; i < ID.length; i++) {
+            cookie = cookie.replace('%2C' + ID[i] + '%3A0', "%2C" + ID[i] + "%3A0");
+            cookie = cookie.replace('%2C' + ID[i] + '%3A1', "%2C" + ID[i] + "%3A0");
+            var cookieName = "OptanonConsent";
+            OptanonActiveGroups = OptanonActiveGroups.replace("," + ID[i] + ",", ",");
+            OnetrustActiveGroups = OnetrustActiveGroups.replace("," + ID[i] + ",", ",");
+        }
+        document.cookie = cookieName + "=" + cookie + expires + ";path=/; Samesite=Lax;" //domain=" + domain + ";";
+        console.log("OnetrustActiveGroups = " + OnetrustActiveGroups);
+        console.log("Targeting Cookies disabled!");
+    }
+
+    window.addEventListener("message", function(event) {
+        if (event.origin != "https://privacyportal-cdn.onetrust.com") {
+            console.log("Not an event from expected iframe");
+            return;
+        }
+        //alert("received msg from parent: " + event.data + ", event.origin: " + event.origin);
+        //alert("received msg from parent: " + event.data);
+        updateTargeting(groupID);
+        formSubmit = true;
+        console.log("formSubmit = " + formSubmit);
+        window.alert("Event received from iframe: data = " + event.data + "; event.origin: " + event.orgin);
+        //event.data: "requestTypes":["Do Not Sell My Information"],"country":"AX","state":""
+        console.log("event: " + updateEvent);
+    });
+</script>
+<!-- OneTrust Cookies Consent Notice end -->

@@ -1,0 +1,17 @@
+<script>
+    //SHOULD BE USED ONLY ON COOKIE POLICY. TRIGGER FUNCTION BELOW TO REMOVE DUPLICATE CATEGORIES
+    function clearDup() {
+        var sec = document.getElementById("ot-sdk-cookie-policy")
+        var tally = [];
+        for (var i = sec.length - 1; i >= 0; i--) {
+            if (tally[sec[i].firstChild.innerText] === undefined) {
+                tally[sec[i].firstChild.innerText] = 1;
+            } else {
+                //console.log(i,sec[i].firstChild.innerText);
+                sec[i].remove();
+                //return true;
+            }
+        }
+        //return false;
+    }
+</script>

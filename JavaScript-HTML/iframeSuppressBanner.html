@@ -1,0 +1,19 @@
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"></script>
+<script type="text/javascript">
+    function OptanonWrapper() {
+        if (window.self == window.top) {
+            for (i = 0; i < window.frames.length; i++) {
+                window.frames[i].postMessage('cookieGroupsUpdated', '*');
+            }
+        } else {
+            document.getElementById("onetrust-consent-sdk").style.display = "none"; 
+            window.addEventListener('message', function(event) { 
+                if (~event.origin.match(/domain\.com/) && event.data == 'cookieGroupsUpdated') { 
+                    location.reload();
+                } else {
+                    return;
+                }
+            });
+        }
+    }
+</script>

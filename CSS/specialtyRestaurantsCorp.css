@@ -1,0 +1,28 @@
+#onetrust-banner-sdk #onetrust-reject-all-handler {
+    background: transparent;
+    border: none;
+    color: #fff !important;
+}
+
+#onetrust-consent-sdk button {
+    font-weight: 700;
+}
+
+#onetrust-banner-sdk #onetrust-reject-all-handler:hover {
+    text-decoration: underline;
+    color: #fff !important;
+}
+
+#onetrust-consent-sdk #onetrust-banner-sdk {
+    background-color: #00000088 !important;
+}
+
+#onetrust-consent-sdk #onetrust-accept-btn-handler {
+    background-color: #cacaca;
+    border-color: #cacaca;
+    color: #000 !important;
+}
+
+#onetrust-consent-sdk #onetrust-policy-text {
+    font-size: 1.1em !important;
+}

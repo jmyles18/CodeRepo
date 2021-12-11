@@ -1,0 +1,25 @@
+<script>
+    window.geofeed = function(options) {
+        // string two digit continent code EU, NA, OC, AS, SA, AF
+        var continent = options.continent.toString();
+        // string two digit ISO country code
+        var country = options.country.toString();
+        // string two digit state code
+        var state = options.state.toString();
+
+        if (continent == '[INSERT CONTINENT CODE]') {
+            //Logic for CONTINENT user, common case is to use 'EU' and add logic for EU users
+
+        } else {
+            // Logic for user outside of continent
+
+        }
+        // similar logic can be included for country level and state level users.
+
+    };
+
+    // Call geo-location JSONP service
+    var jsonp = document.createElement('script');
+    jsonp.setAttribute('src', 'https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location/geofeed';);
+    document.head.appendChild(jsonp);
+</script>

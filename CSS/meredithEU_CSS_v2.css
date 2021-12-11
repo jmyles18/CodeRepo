@@ -1,0 +1,15 @@
+#onetrust-consent-sdk button {
+    background-color: transparent !important;
+    border-radius: 2px !important;
+    color: #555 !important;
+    cursor: pointer !important;
+    border-color: #555 !important;
+}
+
+#onetrust-pc-sdk .pc-logo {
+    display: none !important;
+}
+
+#onetrust-consent-sdk #onetrust-pc-sdk .active-group {
+    border-color: #555 !important;
+}

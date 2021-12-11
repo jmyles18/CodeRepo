@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+
+
+
+    <!-- OneTrust Cookies Consent Notice start for t-mobile.com -->
+
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="50312e77-e24a-48a3-8ebc-4c45041f37a9-test"></script>
+    <script type="text/javascript">
+        function getOptanonAlertBoxClosed() {
+            let v = document.cookie.match('(^|;) ?OptanonAlertBoxClosed=([^;]*)(;|$)');
+            return v ? v[2] : null;
+        }
+
+        function updateCookieGroups() {
+            let gpcValue = navigator.globalPrivacyControl;
+            if (null == getOptanonAlertBoxClosed() && gpcValue) {
+                console.log("GPC enabled and no interactions with Cookie UI logged; disabling SPD toggle")
+                OneTrust.RejectAll();
+            } else {
+                console.log("Interaction already logged or GPC not enabled; no update performed");
+            }
+        }
+
+        function OptanonWrapper() {
+            console.log("consentId:", OneTrust.getDataSubjectId());
+            updateCookieGroups();
+        }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for t-mobile.com -->
+
+
+    <title>OneTrust Testing - Home</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+    </div>
+
+    <h1>OneTrust Testing</h1>
+
+
+
+
+
+    <!-- OneTrust Cookies Settings button start -->
+    <button class="ot-sdk-show-settings">Cookie Settings</button>
+    <!-- OneTrust Cookies Settings button end -->
+
+
+</body>
+
+</html>
